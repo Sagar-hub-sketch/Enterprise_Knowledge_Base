@@ -28,6 +28,9 @@ app.get('/', (req, res) => {
 // Strictly fetch the port number ONLY from the .env file
 const PORT = process.env.PORT;
 
+// Connect Auth Routes
+app.use('/api/auth', require('./routes/authRoutes'));
+
 // Start the Express server
 app.listen(PORT, () => {
     console.log(`Server is running securely on port ${PORT}`);
